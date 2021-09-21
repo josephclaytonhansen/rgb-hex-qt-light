@@ -6,3 +6,7 @@ Lightweight, floating/translucent RGB/HEX converter using requests
 This is really just a desktop wrapper for the Color API - www.thecolorapi.com - but it's still a handly little utility. 
 
 Total time to make: about 2.5 hours 
+
+# Download as Linux (Ubuntu) program
+https://drive.google.com/file/d/1ymV3YiHosMbiw2a-5RoocadKm_kGrJ2r/view?usp=sharing
+
