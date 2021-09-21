@@ -7,6 +7,6 @@ This is really just a desktop wrapper for the Color API - www.thecolorapi.com - 
 
 Total time to make: about 2.5 hours 
 
-# Download as Linux (Ubuntu) program
-Note that because this has PyQT bundled with it, it's a large file (comparatively speaking). The source code is only 7 KB, so if you have PyQT installed already, running this from the command line is a *much* better option. It's also why I didn't bother setting up packages for MacOS/Windows. 
+# Instructions
+Because this uses PyQT, the size needed to package it makes it unreasonable at best. Therefore, you should run it from the command line with a simple 'python' command. 
 
