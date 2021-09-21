@@ -77,7 +77,7 @@ class main(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("RGB/HEX")
-        self.setWindowFlags(Qt.FramelessWindowHint| Qt.WindowSystemMenuHint)
+        self.setWindowFlags(Qt.FramelessWindowHint| Qt.WindowSystemMenuHint | Qt.WindowStaysOnTopHint)
         self.setAttribute(Qt.WA_TranslucentBackground);
         self.initUI()
     
