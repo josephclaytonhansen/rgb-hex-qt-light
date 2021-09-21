@@ -82,7 +82,7 @@ class main(QMainWindow):
         self.initUI()
     
     def initUI(self):
-        self.setStyleSheet("background:rgba(200,200,200,.4);")
+        self.setStyleSheet("background:rgba(220,220,220,.3);")
         #add color block, RGB fields with button, and HEX field with button
         self.content = QWidget()
         self.setCentralWidget(self.content)
@@ -90,7 +90,7 @@ class main(QMainWindow):
         self.content.setLayout(self.content_layout)
         #I'm not typing that again if I can help it
         c = self.content_layout
-        self.c_block = ColorBlock("#000000", 50, 60, self)
+        self.c_block = ColorBlock("#000000", 80, 60, self)
         c.addWidget(self.c_block,1,1,2,2)
         self.r_entry, self.g_entry, self.b_entry, self.rgb_go = QSpinBox(), QSpinBox(), QSpinBox(), QPushButton("Convert RGB")
         self.r_entry.setRange(0,255)
@@ -106,13 +106,18 @@ class main(QMainWindow):
         self.hex_entry.returnPressed.connect(self.colorChangeHex)
         self.hex_entry.setPlaceholderText("Hex color")
         self.rgb_go.clicked.connect(self.colorChangeRgb)
-        #color name, shades, and scheme
+        #color name
         self.color_name = QPushButton()
         self.color_name.clicked.connect(self.closestNamedHex)
         c.addWidget(self.color_name, 2,6,1,1)
+        #styles
+        self.r_entry.setStyleSheet("background:rgba(250,250,250,.6);")
+        self.g_entry.setStyleSheet("background:rgba(250,250,250,.6);")
+        self.b_entry.setStyleSheet("background:rgba(250,250,250,.6);")
+        self.hex_entry.setStyleSheet("background:rgba(250,250,250,.6);")
     
     def colorChangeHex(self):
-        self.c_block_pixmap = QPixmap(50,60)
+        self.c_block_pixmap = QPixmap(80,60)
         #update colorblock color with HEX value
         self.update_value = self.hex_entry.text()
         print("update value:"+self.update_value)
@@ -136,7 +141,7 @@ class main(QMainWindow):
         #if Convert clicked, do that
         self.rgb = [self.r_entry.value(), self.g_entry.value(), self.b_entry.value()]
         self.hex = rgb_to_hex(self.rgb)
-        self.c_block_pixmap = QPixmap(50,60)
+        self.c_block_pixmap = QPixmap(80,60)
         try:
             self.c_block_pixmap.fill(QColor(self.hex))
             self.hex_entry.setText(self.hex)
